@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMAK Sports TV APK Download v1.0 Latest Version For Android 2026</title>
+    <!-- SMAK TV SEO Meta Framework -->
+    <meta name="description" content="Download SMAK Sports TV APK latest version. Watch Live Cricket, Football, World Cup, and premium sports channels in HD quality with zero subscription.">
+    <meta name="keywords" content="smak sports tv apk, smak tv app download, smak tv live cricket, free sports streaming app, smak tv official">
+    <meta name="author" content="SMAK Media Lab">
+    
+    <!-- 🌟 ফেভিকন (Favicon) লিঙ্ক কনফিগারেশন -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/app_icon.png">
+    
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #0E1116;
+            color: #CFD8D7;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        a {
+            text-decoration: none;
+        }
+        
+        /* Cricfy Luxury Header Navbar */
+        header {
+            background-color: #161B22;
+            border-bottom: 2px solid #21262D;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .logo-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-block img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 255, 135, 0.2);
+        }
+        .logo-block span {
+            font-size: 22px;
+            font-weight: 900;
+            color: #00FF87;
+            letter-spacing: 0.5px;
+        }
+        .menu-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        .menu-links a {
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .menu-links a:hover, .menu-links a.active {
+            color: #00FF87;
+        }
+
+        .wrapper {
+            max-width: 1100px;
+            margin: 110px auto 40px auto;
+            padding: 20px;
+        }
+        
+        /* 📱 ট্যাব সেকশন কন্ট্রোল */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        .main-article {
+            background-color: #161B22;
+            padding: 45px 35px;
+            border-radius: 12px;
+            border: 1px solid #21262D;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        h1 {
+            font-size: 34px;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 25px;
+            border-left: 5px solid #00FF87;
+            padding-left: 15px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin: 45px 0 20px 0;
+            border-bottom: 2px solid #21262D;
+            padding-bottom: 10px;
+        }
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #00FF87;
+            margin: 25px 0 12px 0;
+        }
+        p {
+            margin-bottom: 22px;
+            color: #C9D1D9;
+            text-align: justify;
+        }
+        
+        ul.smak-list {
+            margin: 20px 0 35px 25px;
+            list-style-type: square;
+            color: #C9D1D9;
+        }
+        ul.smak-list li {
+            margin-bottom: 12px;
+            padding-left: 5px;
+        }
+
+        .feature-grid {
+            background-color: #0E1116;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #00FF87;
+            margin: 25px 0;
+            border: 1px solid #21262D;
+            border-left: 4px solid #00FF87;
+        }
+        
+        .button-wrapper {
+            text-align: center;
+            margin: 45px 0;
+        }
+        .smak-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #00FF87 0%, #00D166 100%);
+            color: #0E1116;
+            padding: 18px 50px;
+            font-size: 22px;
+            font-weight: 900;
+            border-radius: 50px;
+            box-shadow: 0 4px 25px rgba(0, 255, 135, 0.3);
+            transition: 0.3s transform, 0.3s box-shadow;
+            cursor: pointer;
+        }
+        .smak-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 35px rgba(0, 255, 135, 0.5);
+        }
+
+        /* 📊 Pros and Cons Section Styling */
+        .pros-cons-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .pros-box, .cons-box {
+            background-color: #0E1116;
+            border: 1px solid #21262D;
+            border-radius: 8px;
+            padding: 25px;
+        }
+        .pros-box h3 { color: #00FF87; margin-bottom: 15px; }
+        .cons-box h3 { color: #FF4D4D; margin-bottom: 15px; }
+        .pros-cons-list {
+            list-style: none;
+        }
+        .pros-cons-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: #C9D1D9;
+        }
+        .pros-cons-list i { margin-top: 4px; }
+        .pros-box i { color: #00FF87; }
+        .cons-box i { color: #FF4D4D; }
+
+        /* 📋 Technical Specification Table */
+        .info-table {
+            width: 100%;
+            margin: 25px 0 40px 0;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 15px;
+            background-color: #0E1116;
+            border: 1px solid #21262D;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .info-table tr {
+            border-bottom: 1px solid #21262D;
+        }
+        .info-table tr:last-child { border-bottom: none; }
+        .info-table td { padding: 14px 20px; }
+        .info-table td:first-child {
+            font-weight: 700;
+            color: #FFFFFF;
+            width: 35%;
+            background-color: rgba(255, 255, 255, 0.01);
+        }
+        .info-table td:last-child { color: #C9D1D9; }
+
+        /* 🗂️ Version History Styling */
+        .version-header {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #0E1116;
+            border-radius: 8px;
+            border: 1px solid #21262D;
+            margin-bottom: 35px;
+        }
+        .version-badge {
+            display: inline-block;
+            background-color: rgba(0, 255, 135, 0.1);
+            color: #00FF87;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 10px;
+            border: 1px solid rgba(0, 255, 135, 0.2);
+        }
+        .old-versions {
+            margin: 30px 0;
+        }
+        .version-link-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0E1116;
+            border: 1px solid #21262D;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            transition: 0.3s;
+        }
+        .version-link-item:hover {
+            border-color: #00FF87;
+            background-color: rgba(0, 255, 135, 0.01);
+        }
+        .version-link-item a {
+            color: #60EFFF;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .version-date {
+            font-size: 12px;
+            color: #8B949E;
+        }
+
+        .faq-block {
+            background-color: #0E1116;
+            border: 1px solid #21262D;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .faq-q {
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .faq-a {
+            color: #C9D1D9;
+            margin-bottom: 0;
+            padding-left: 25px;
+        }
+
+        footer {
+            background-color: #090B0F;
+            padding: 60px 20px 40px 20px;
+            border-top: 2px solid #161B22;
+            margin-top: 80px;
+        }
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .dmca-box {
+            background-color: rgba(255, 165, orange, 0.03);
+            border-left: 4px solid #FFA500;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border: 1px solid #21262D;
+            border-left: 4px solid #FFA500;
+        }
+        .dmca-box h4 {
+            color: #FFA500;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+.dmca-box p {
+font-size: 13px;
+color: #8B949E;
+margin-bottom: 0;
+line-height: 1.7;
+text-align: justify;
+}
+.footer-bottom {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 20px;
+border-top: 1px solid #21262D;
+padding-top: 30px;
+color: #8B949E;
+font-size: 14px;
+}
+.footer-bottom a {
+color: #00FF87;
+margin-left: 20px;
+font-weight: 500;
+transition: 0.3s;
+}
+.footer-bottom a:hover {
+color: #FFFFFF;
+text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+    <!-- 🚀 ১. ন্যাভিগেশন হেডার এবং মেনুবার কনফিগারেশন -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-block">
+                <img src="assets/app_icon.png" alt="SMAK Logo" onerror="this.src='https://placehold.co'">
+                <span>SMAK TV</span>
+            </div>
+            <ul class="menu-links">
+                <!-- 💡 ট্যাব চেঞ্জের জন্য কাস্টম ডার্ট/জাভাস্ক্রিপ্ট আইডি ব্যবহার করা হয়েছে -->
+                <li><a href="#" id="menu-home" class="active" onclick="switchTab('home')">Home</a></li>
+                <li><a href="#" id="menu-download" onclick="switchTab('download')">Download</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <article class="main-article">
+
+            <!-- ======================================================= -->
+            <!-- 🏠 হোম ট্যাব কন্টেন্ট সেকশন -->
+            <!-- ======================================================= -->
+            <div id="tab-home" class="tab-content active">
+                <h1>SMAK TV APK Download v1.0 Latest Version For Android 2026</h1>
+                
+                <p><strong>SMAK TV</strong> offers live cricket, football, and premium sports streaming. With this secure platform, watch matches in HD quality and explore multiple backup channels. Enjoy 100% free access to download the official SMAK APK without any subscription worries.</p>
+
+                <div class="button-wrapper">
+                    <a href="#" class="smak-btn" onclick="switchTab('download')">
+                        <i class="fa-solid fa-cloud-arrow-down"></i> GO TO DOWNLOAD PAGE
+                    </a>
+                </div>
+
+                <h2>What is SMAK TV?</h2>
+                <p><strong>SMAK TV</strong> is a free sports streaming platform. It allows users to watch live cricket matches, football games, and a variety of other major events. It is distributed safely as an APK file for Android devices, and can also be installed on PCs via emulators. It brings traditional live cable TV services straight to your pocket screen. SMAK App offers on-demand streaming according to your choice, making it safe and completely free to use.</p>
+
+                <h2>Why Choose SMAK Sports TV?</h2>
+                <p>Many sports fans ask why they should choose SMAK over other traditional paid streaming Apps. Here are the core values:</p>
+                <ul class="smak-list">
+                    <li>It's 100% free and does not require any paid subscription plan.</li>
+                    <li>Provides high-definition live channels of all international sports events.</li>
+                    <li>Optimized lightweight profile that runs smoothly on any Android configuration.</li>
+                    <li>Direct access through our fast Off-Server Download Links.</li>
+                </ul>
+                <h2>Features of SMAK TV APK</h2>
+                
+                <div class="feature-grid">
+                    <h3>Direct Access to Cricket Channels</h3>
+                    <p>This customized functionality provides instant connectivity to elite sports networks. Cricket lovers can enjoy comprehensive coverage, matches, and notifications without navigation delays.</p>
+                </div>
+
+                <div class="feature-grid">
+                    <h3>HD Quality Streaming</h3>
+                    <p>SMAK TV offers superior video rendering engines with minimal buffering and no pausing issues. Users can experience crystal-clear flow and manually adjust resolution scales from 360p up to 1080p HD based on active internet bandwidth.</p>
+                </div>
+
+                <div class="feature-grid">
+                    <h3>Smart Frequency Ad Cap</h3>
+                    <p>We value user experience above all. Unlike annoying streaming apps that push ads on every click, SMAK TV features an optional premium pass—watch one short video ad and enjoy a completely ad-free interface for one full hour.</p>
+                </div>
+
+                <!-- 📊 আপনার কাঙ্ক্ষিত Pros and Cons of SMAK TV সেকশন (FAQ এর আগে যুক্ত) -->
+                <h2>Pros & Cons of SMAK TV</h2>
+                <p>Before installing any third-party live application, it is essential to understand both its premium advantages and functional limits:</p>
+                
+                <div class="pros-cons-container">
+                    <!-- Pros (সুবিধাসমূহ) -->
+                    <div class="pros-box">
+                        <h3><i class="fa-solid fa-circle-check"></i> Premium Pros</h3>
+                        <ul class="pros-cons-list">
+                            <li><i class="fa-solid fa-plus"></i> 100% Free: No subscription plans or premium hidden charges.</li>
+                            <li><i class="fa-solid fa-plus"></i> Multi-Channel Feeds: Backup sources ensure stream continuity.</li>
+                            <li><i class="fa-solid fa-plus"></i> Lightweight Build: Ultra-compressed file sizes save local memory.</li>
+                            <li><i class="fa-solid fa-plus"></i> Smart Frequency Cap: User-controlled option for ad-free environments.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Cons (অসুবিধাসমূহ) -->
+                    <div class="cons-box">
+                        <h3><i class="fa-solid fa-circle-xmark"></i> Functional Cons</h3>
+                        <ul class="pros-cons-list">
+                            <li><i class="fa-solid fa-minus"></i> No App Store Link: Requires manual installation via APK packages.</li>
+                            <li><i class="fa-solid fa-minus"></i> Network Dependent: Quality scales automatically with raw bandwidth speeds.</li>
+                            <li><i class="fa-solid fa-minus"></i> Block Warnings: Shows Play Protect status during standard side-loading.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Frequently Asked Questions (FAQ)</h2>
+                
+                <div class="faq-block">
+                    <div class="faq-q"><i class="fa-solid fa-circle-question" style="color: #00FF87;"></i> Q: Is SMAK TV application safe to install?</div>
+                    <div class="faq-a">A: Absolutely. Our package contains no malicious code. If your device prompts a Play Protect block, it is solely due to manual installation outside the standard Google ecosystem.</div>
+                </div>
+                
+                <div class="faq-block">
+                    <div class="faq-q"><i class="fa-solid fa-circle-question" style="color: #00FF87;"></i> Q: Does the app require login or numbers?</div>
+                    <div class="faq-a">A: No personal numbers, credentials, or registration profiles are needed. Open the app and start streaming immediately.</div>
+                </div>
+            </div> <!-- 🏠 হোম ট্যাব এখানে শেষ হলো -->
+            <!-- ======================================================= -->
+            <!-- 📥 ডাউনলোড ট্যাব কন্টেন্ট সেকশন (আপনার কাস্টম রিকোয়েস্ট অনুযায়ী) -->
+            <!-- ======================================================= -->
+            <div id="tab-download" class="tab-content">
+                <!-- 👑 লোগো এবং প্রিমিয়াম টাইটেল এরিয়া -->
+                <div class="version-header">
+                    <img src="assets/app_icon.png" alt="SMAK Sports TV" style="width: 80px; height: 80px; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 0 20px rgba(0,255,135,0.3);">
+                    <h2>Download SMAK Sports TV Latest Version</h2>
+                    <p style="font-size: 14px; color: #8B949E; max-width: 600px; margin: 0 auto;">Access our high-speed secure mirror links to download the authentic premium build. Enjoy seamless playback on all compatible Android architectures.</p>
+                    <div class="version-badge">Download SMAK Sports TV Latest v2.5</div>
+                </div>
+
+                <div class="button-wrapper">
+                    <!-- 🚀 এই বাটনটি ইউজারকে সরাসরি আমাদের ডাউনলোড ডট এইচটিএমএল পেজের কাউন্টডাউন টাইলারে নিয়ে যাবে -->
+                    <a href="download.html" class="smak-btn" target="_blank">
+                        <i class="fa-solid fa-file-shield"></i> SECURE DOWNLOAD APK (v2.5)
+                    </a>
+                </div>
+
+                <!-- 🗂️ পুরনো সংস্করণের ব্যাকআপ ডাউনলোড লিংকসমূহ (ভার্সন কন্ট্রোল) -->
+                <h3><i class="fa-solid fa-clock-rotate-left"></i> Previous Older Versions (Backup Servers)</h3>
+                <p>If you face any optimization compilation delays with the latest package, you can roll back to our previous stable versions immediately:</p>
+                
+                <div class="old-versions">
+                    <div class="version-link-item">
+                        <a href="https://google.com" target="_blank"><i class="fa-solid fa-box-archive"></i> SMAK Sports TV APK v2.0 (Stable Build)</a>
+                        <span class="version-date">Released: September 2026</span>
+                    </div>
+                    <div class="version-link-item">
+                        <a href="https://google.com" target="_blank"><i class="fa-solid fa-box-archive"></i> SMAK Sports TV APK v1.0 (Initial Release)</a>
+                        <span class="version-date">Released: August 2026</span>
+                    </div>
+                </div>
+
+                <!-- 📋 প্রফেশনাল স্পেসিফিকেশন ইনফরমেশন টেবিল -->
+                <h2>SMAK Sports TV App Download for Mobile</h2>
+                <p>Verify the software parameters and technical build details below before running the automatic device deployment package:</p>
+                
+                <table class="info-table">
+                    <tr><td>App Name</td><td>SMAK Sports TV Official</td></tr>
+                    <tr><td>Latest Version</td><td>v2.5 (Production Release)</td></tr>
+                    <tr><td>File Size</td><td>14.8 MB (Optimized & Compressed)</td></tr>
+                    <tr><td>Requirement</td><td>Android 5.0 (Lollipop) or Above</td></tr>
+                    <tr><td>Encryption</td><td>SSL (HTTPS) Cloud Verification Succeeded</td></tr>
+                    <tr><td>Developer</td><td>SMAK Media Lab</td></tr>
+                    <tr><td>Last Update</td><td>25 October 2026</td></tr>
+                </table>
+
+                <!-- 📱 ধাপে ধাপে ফোনে ইনস্টল করার প্রফেশনাল গাইড -->
+                <h2>How to Install SMAK Sports TV APK?</h2>
+                <div class="feature-grid">
+                    <h3>Step 1: Save the Package</h3>
+                    <p>Click on our secure download button to generate the direct mirror file and save the installer onto your local phone memory repository.</p>
+                </div>
+                <div class="feature-grid">
+                    <h3>Step 2: Permit Manual Deployment</h3>
+                    <p>Navigate to your phone system Settings ➔ Privacy/Security control node and switch on the "Unknown Sources" or "Install Unknown Apps" permission block.</p>
+                </div>
+                <div class="feature-grid">
+                    <h3>Step 3: Trigger Installation</h3>
+                    <p>Launch your local file explorer component, enter the downloads log directory, hit the SMAK TV installer, and accept the final system prompt nodes.</p>
+                </div>
+            </div> <!-- 📥 ডাউনলোড ট্যাব এখানে শেষ হলো -->
+        </article>
+    </div>
+
+    <!-- ⚖️ ২. গোল্ডেন কপিরাইট প্রোটেকশন আইনি ফুটার এবং সম্পূর্ণ পলিসি লিঙ্কসমূহ -->
+    <footer>
+        <div class="footer-container">
+            <div class="dmca-box">
+                <h4><i class="fa-solid fa-gavel"></i> Legal Copyright Disclaimer & DMCA Notice</h4>
+                <p>SMAK Sports TV operates strictly as an interactive digital index and directory service. This website and its accompanying Android application package do not host, store, broadcast, or transmit any video, audio, or media content files on our physical hardware or host infrastructure. We exclusively aggregate, scrape, and embed public, open-source hyper-links and web player components readily indexed on the public internet. All intellectual properties, trademarks, logos, and media streams belong to their respective certified network broadcasters and official distribution right holders. Under global digital compliance guidelines, we maintain zero liability for third-party hosting dependencies. If any copyright infringements occur, all takedown requests must be directed natively to the primary web hosts storing the content.</p>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 SMAK Sports TV Lab. All rights reserved globally.</span>
+                <div>
+                    <!-- 💡 কাস্টম আইনি পেজ লিংক (পরবর্তী বক্সে আমরা এই পেজগুলো বানাবো) -->
+                    <a href="privacy.html" target="_blank">Privacy Policy</a>
+                    <a href="terms.html" target="_blank">Terms of Service</a>
+                    <a href="https://t.me" target="_blank">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ⚡ ৩. ওয়ান-ক্লিক ট্যাব সুইচিং লাইভ ইঞ্জিন স্ক্রিপ্ট -->
+    <script>
+        function switchTab(tabName) {
+            // সমস্ত ট্যাব কন্টেন্ট হাইড (লুকিয়ে) করা
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // সমস্ত মেনু লিঙ্কের অ্যাক্টিভ ক্লাস রিমুভ করা
+            const links = document.querySelectorAll('.menu-links a');
+            links.forEach(link => link.classList.remove('active'));
+
+            // সিলেক্টেড ট্যাব এবং মেনু বাটনকে সচল করা
+            document.getElementById('tab-' + tabName).classList.add('active');
+            document.getElementById('menu-' + tabName).classList.add('active');
+
+            // ট্যাব সুইচ করলে পেজটি অটোমেটিক ওপরে স্ক্রল হবে
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
